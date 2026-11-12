@@ -1,0 +1,231 @@
+{
+  "info": {
+    "name": "Inventário TI API — Classroom",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create equipment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/equipments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "equipments"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Notebook Dell\",\n  \"category\": \"notebook\",\n  \"status\": \"available\"\n}"
+        }
+      }
+    },
+    {
+      "name": "List equipment",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/equipments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "equipments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/equipments/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "equipments",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update equipment",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/equipments/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "equipments",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"maintenance\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete equipment",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/equipments/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "equipments",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Filter by category",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/equipments/filter/category?category=notebook",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "equipments",
+            "filter",
+            "category"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "notebook"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Filter by status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/equipments/filter/status?status=maintenance",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "equipments",
+            "filter",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "maintenance"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Statistics",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/equipments/statistics",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "equipments",
+            "statistics"
+          ]
+        }
+      }
+    }
+  ]
+}
